@@ -95,10 +95,10 @@ def update_domain_address(server,
     server.create_dns_override(session_id, domain_name, public_address)
 
 def get_public_address():
-    '''Get the public IP address (from http://jsonip.com)
+    '''Get the public IP address
     '''
     
-    page = urllib2.urlopen('http://jsonip.com/')
+    page = urllib2.urlopen('http://api.ipify.org?format=json')
     page_json = json.loads(page.read())
         
     return page_json['ip']
